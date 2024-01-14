@@ -4,6 +4,10 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+section {
+  margin-bottom: 50px;
+}
 /* header styles */
 header {
   padding: 40px;
@@ -36,8 +40,6 @@ nav ul li {
   align-items: center;
   justify-content: space-between;
   padding: 40px;
-  border: 2px solid tomato;
-  
 }
 
 .banner-content {
@@ -45,7 +47,6 @@ nav ul li {
   flex-direction: column;
   gap: 20px;
   width: calc(100% - 80px) / 2;
-  border: 2px solid tomato;
 }
 
 .banner-content h2 {
@@ -74,48 +75,168 @@ nav ul li {
 
 .banner-img {
   width: calc(100% - 80px) / 2;
-  background-image: url("/images/Circle design.svg");
+  background-image: url("../images/Circle design.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  border: 2px solid tomato;
 }
 
 .banner-img img {
   width: 75%;
 }
 
+/* sponsor section styles */
+
+.sponsors {
+  display: flex;
+  gap: 70px;
+  justify-content: center;
+}
+
+#sponsor-section hr {
+  width: 80%;
+  margin: 20px auto;
+}
+
+/* card styles */
+
+.card-container {
+  padding: 40px 200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  row-gap: 30px;
+}
+
+.card {
+  padding: 10px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+}
+
+.card span {
+  display: block;
+}
+
+.card-title {
+  color: #18191f;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+#collection-section h3 {
+  color: #3a3a3a;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.grid-span {
+  grid-column: 3 / span 1;
+  text-align: right;
+  color: rgba(224, 44, 109, 0.87);
+  font-weight: 700;
+}
+
+.grid-span i {
+  margin-left: 5px;
+}
+
+/* featured section styles */
+.featured-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 200px 40px 200px;
+  gap: 150px;
+}
+
+.featured-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.featured-content h2 {
+  color: #0a0826;
+  font-size: 38px;
+  font-weight: 700;
+}
+.featured-content p {
+  width: 75%;
+  color: #6c6c6c;
+  font-weight: 700;
+}
+
+.featured-content button {
+  background: #e02c6d;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  width: fit-content;
+  padding: 10px 24px;
+}
+
 /* media queries */
 
 @media screen and (max-width: 576px) {
-
-    nav{
-        flex-direction: column;
-    }
-    nav ul{
-        flex-direction: column;
-        align-items: center;
-    }
+  nav {
+    flex-direction: column;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
   .banner {
     flex-direction: column-reverse;
   }
 
-  .banner-content{
+  .banner-content, .featured-content {
     align-items: center;
     text-align: center;
   }
 
-  .banner-content h2,.banner-content p, .banner-img img{
+  .banner-content h2,
+  .banner-content p,
+  .banner-img img, .featured-img img, .featured-content p {
     width: 100%;
-  } 
+  }
 
   .banner-content h2 {
     font-size: 28px;
     font-weight: 700;
+  }
+
+  .banner-content p {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .sponsors {
+    flex-wrap: wrap;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .grid-span {
+    grid-column: 1 / span 1;
+  }
+
+  .featured-container{
+    flex-direction: column-reverse;
+    gap: 30px;
+    padding: 20px;
     
   }
 
-  .banner-content p{
-    font-size: 14px;
-    font-weight: 500;
+  .featured-content h2{
+    font-size: 24px;
   }
 }
